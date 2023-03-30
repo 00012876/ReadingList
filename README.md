@@ -5,7 +5,7 @@ This app allows users to track the books they waht to read
 #### Instructions
 .Download the source code
 ```bash
-git clone [url to the githum repo]
+git clone https://github.com/00012876/ReadingList.git
 ```
 
 or just download the zip file
@@ -24,4 +24,4 @@ node app
 - pug
 
 #### Link to github repo
-[url to the githum repo]
+https://github.com/00012876/ReadingList.git
