@@ -1,0 +1,19 @@
+extends layout.pug
+
+block number1
+  if error
+    p Please fill the input
+
+  if success
+    p Good job 
+
+  form.form(action= '/add' method='POST')
+    input.input(type='text' placeholder='Here, you may add a book...' name ='book')
+    button.btn Add
+
+  div.books
+    if books.length
+      each book in books
+        p.book #{ book.info }
+    else
+      p.book No any books here
