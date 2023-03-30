@@ -1,4 +1,8 @@
-* {
+:root {
+    font-family: 'Open Sans', sans-serif;
+}
+
+*{
    margin: 10px;
    padding: 2px;
    box-sizing: border-box;
@@ -26,6 +30,7 @@
     font-size: 1.75rem;
     width: 100%;
     border:1.5px solid #fdc6c6;
+    font-family: inherit;
 }
 
 .btn {
@@ -50,6 +55,26 @@
     border-bottom: 1px ridge #ffc0c0;
 }
 
+
+
 .book:hover {
     background: rgb(220, 227, 252);
+}
+
+.error,
+.success {
+    text-align: center;
+    font-size: 1.4rem;
+    border: 1px solid rgb(223, 223, 223);
+    padding: 10px;
+}
+
+.error {
+    color: red;
+    border-color: red;
+}
+
+.success {
+    color: green;
+    border-color: green;
 }
