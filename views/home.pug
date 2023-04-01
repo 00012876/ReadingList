@@ -7,6 +7,9 @@ block number1
   if success
     p.success Well done!
 
+  if deleted
+    p.success Successfully deleted
+
   form.form(action= '/add' method='POST')
     input.input(type='text' placeholder='Here, you may add a book...' name ='book')
     button.btn Add
@@ -14,6 +17,11 @@ block number1
   div.books
     if books.length
       each book in books
-        p.book #{ book.info }
+        p.book 
+          if book.read
+            a.read(href=`/${ book.id}/update`) #{ book.info }
+          else
+            a.unread(href=`/${ book.id}/update`) #{ book.info }
+          a.delete(href=`/${ book.id }/delete`) Delete
     else
       p.book No any books here

@@ -62,6 +62,49 @@ app.post('/add', (req, res) => {
   }
 })
 
+app.get('/:id/delete', (req, res) => {
+  const id = req.params.id
+
+  fs.readFile('./data/books.json', (err, data) => {
+    if (err) throw err
+
+    const books = JSON.parse(data)
+
+    const filteredBooks = books.filter(book => book.id != id)
+
+    fs.writeFile('./data/books.json', JSON.stringify(filteredBooks), (err) => {
+      if (err) throw err
+      res.render('home', { books: filteredBooks, deleted:true })
+
+    })
+  })
+})
+
+
+app.get('/:id/update', (req, res) => {
+  const id = req.params.id
+  
+  fs.readFile('./data/books.json', (err, data) => {
+    if (err) throw err
+
+    const books = JSON.parse(data)
+    const book = books.filter(book => book.id == id)[0]
+    const bookIdx = books.indexOf(book)
+    const splicedBook = books.splice(bookIdx, 1)[0]
+
+    splicedBook.read = true
+
+    books.push(splicedBook)
+
+    fs.writeFile('./data/books.json', JSON.stringify(books), (err) => {
+      if (err) throw err
+      
+      res.render('home', { books: books })
+    })
+  })
+    
+})
+
 app.listen(PORT, (err) => {
     if (err) throw err
 

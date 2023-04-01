@@ -50,6 +50,9 @@
 }
 
 .book {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
     padding: 5px;
     font-size: 1.5rem;
     border-bottom: 1px ridge #ffc0c0;
@@ -68,11 +71,32 @@
 }
 
 .error {
-    color: red;
-    border-color: red;
+    color: rgb(0, 0, 0);
+    border-color: rgb(0, 0, 0);
+    background-color: rgb(253, 211, 211);
 }
 
 .success {
-    color: green;
-    border-color: green;
+    color: rgb(0, 0, 0);
+    border-color: rgb(0, 0, 0);
+    background-color: rgb(201, 255, 201);
 }
+
+.delete{
+    text-decoration: none;
+    font-size: 1rem;
+    padding:7px 10px;
+    background: rgb(199, 88, 69);
+    color: rgb(255, 255, 255);
+}
+
+.read,
+.unread {
+    text-decoration: none;
+    color:black;
+}
+
+.read {
+    text-decoration: line-through;
+}
+
