@@ -18,6 +18,11 @@
     color: rgb(27, 36, 156);
 }
 
+.text {
+    font-size: 0.93rem;
+    color: rgb(194, 194, 194);
+}
+
 .form {
     width: 99%;
     display: flex;
